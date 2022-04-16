@@ -1,0 +1,219 @@
+.admin {
+    width: 100%;
+    padding: 2rem 0;
+    min-height: 100vh;
+    background-color: $white;
+    display: grid;
+    justify-items: center;
+
+        & form {
+            justify-items: center;
+        }
+
+        &__logo {
+            height: 100%;
+
+                &-box {
+                    height: 15rem;
+                }
+        }
+
+        &__name {
+            letter-spacing: 0.6rem;
+            text-transform: uppercase;
+           
+            @media only screen and (max-width: 770px){
+                font-size: 1.3rem;
+            }
+        }
+
+        & .admin__name {
+            align-self: end;
+        }
+}
+
+.center {
+    justify-self: center;
+    text-align: center;
+}
+
+.counter {
+    width: 100%;
+    max-width: 50rem;
+    display: flex;
+    justify-content: space-between;
+
+        &__box {
+            padding: 1rem;
+            width: 10rem;
+            height: 10rem;
+            background-color: $white;
+            display: grid;
+            justify-items: center;
+            align-content: space-around;
+            cursor: pointer;
+            border-radius: .5rem;
+            box-shadow: .2rem .2rem .5rem rgba($color: $black, $alpha: .2);
+            transition: all $transition;
+                &:hover {
+                    transform: scale(1.1);
+                    box-shadow: .5rem .5rem 1rem rgba($color: $black, $alpha: .08);
+                }
+        }
+
+        &__pending {
+            color: $color-primary;
+        }
+
+        &__approved {
+            color: green;
+        }
+
+        &__disapproved {
+            color: red;
+        }
+
+        &__number {
+            font-size: 2rem;
+        }
+
+        &__group {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+}
+
+.guestList {
+    &__main {
+        align-content: start;
+        background-color: $white;
+    }
+
+    &__section {
+        background-color: $white;
+        width: 100%;
+        display: grid;
+        justify-items: center;
+        align-content: center;
+        padding: 2rem;
+
+        @media only screen and (min-width: 600px){
+            padding: 5rem;
+        }
+
+        &--1 {
+            margin-top: -5rem;
+        }
+    }
+
+    &__container {
+        width: 100%;
+        max-width: $max-width;
+        display: grid;
+        justify-items: center;
+        gap: 3rem;
+
+        &--1 {
+            gap: 2rem !important;
+        }
+    }
+
+    &__nav {
+        width: 100%;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        padding: 2.5rem 5rem;
+        background-color: $white;
+        box-shadow: 0 .2rem .5rem rgba($grey, 0.5);
+
+            @media only screen and (max-width: 770px){
+                padding: 2rem;
+            }
+
+            &-container {
+                width: 100%;
+                max-width: $max-width;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+    }
+
+    &__logout {
+        display: grid;
+        justify-items: center;
+        gap: 1rem;
+
+            &-svg {
+                width: 3rem;
+                height: 3rem;
+            }
+    }
+}
+
+.guest{
+    &__list {
+        width: 100%;
+        padding: 0 1rem;
+        padding-bottom: 2rem;
+        max-width: 60rem;
+        height: 50rem;
+        list-style: none;
+        display: grid;
+        align-content: start;
+        gap: 3rem;
+        overflow-y: scroll;
+
+            &-item {
+                padding: 2rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-radius: .5rem;
+                box-shadow: .2rem .2rem .5rem rgba($color: $black, $alpha: .2);
+            }
+    }
+
+    &__data {
+        display: grid;
+        gap: 2rem;
+    }
+
+    &__name {
+        font-size: 2rem;
+    }
+    &__email {
+        font-size: 1.2rem;
+    }
+
+    &__options {
+        display: grid;
+        gap: 1rem;
+    }
+
+    &__approved,
+    &__disapproved {
+        height: 4rem;
+        width: 4rem;
+        padding: 1rem;
+        fill: $white;
+        transition: all $transition;
+    }
+
+    &__approved {
+        background-color: green;
+    
+            &:hover {
+                background-color: lightgreen;
+            }
+    }
+
+    &__disapproved {
+        background-color: red;
+
+            &:hover {
+                background-color: salmon;
+            }
+    }
+}

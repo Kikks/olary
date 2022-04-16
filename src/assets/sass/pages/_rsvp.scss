@@ -1,0 +1,117 @@
+.form {
+    display: grid;
+    justify-items: start;
+    width: 100%;
+    max-width: 40rem;
+    overflow: hidden;
+
+        &__error {
+            color: red;
+            justify-self: center;
+            margin-bottom: 4rem;
+            text-align: center;
+            font-size: 1.3rem;
+        }
+
+        &__paragraph {
+            line-height: 2;
+            width: 100%;
+
+            @media only screen and (min-width: 770px) {
+                width: 80%;
+                text-align: center;
+            }
+
+            & span {
+                display: block;
+            }
+        }
+
+        & button {
+            background-color: $white;
+        }
+}
+
+.submitted {
+    width: 100%;
+    background-color: $color-secondary;
+    padding: 5rem;
+    opacity: 0;
+    animation: zoom-custom $transition linear forwards;
+
+    @media only screen and (max-width: 770px) {
+        padding: 2rem;
+    }
+
+
+    &__alert {
+        text-align: center;
+       color: $white;
+    }
+}
+
+.input{
+        &__group {
+            width: 100%;
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        &__text{
+            background-color: #eee;
+            border: none;
+            outline: none;
+            width: 100%;
+            padding: 1.5rem;
+            border-bottom: .2rem solid transparent;
+
+                &:hover,
+                &:focus {
+                    border-bottom: .2rem solid $color-primary;
+                }
+
+                &:placeholder-shown + .input__label{
+                    opacity: 0;
+                    visibility: hidden;
+                    transform: translateY(0);
+                  }
+        }
+
+        &__label {
+            position: absolute;
+            top: 2rem;
+            left: 0;
+            font-size: 1.3rem;
+            font-weight: bold;
+            display: block;
+            margin-left: 1.5rem;
+            opacity: 1;
+            transform: translateY(-4rem);
+            transition: all .3s;
+        }
+}
+
+.bank {
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    gap: 3rem;
+
+        &__row {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+        }
+
+        &__detail {
+            margin-right: 2rem;
+        }
+
+        &__paragraph {
+            text-align: center;
+        }
+
+        &__heading {
+            margin-top: 3rem;
+        }
+}

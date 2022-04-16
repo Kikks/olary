@@ -1,0 +1,181 @@
+.section{
+        &__about {
+            padding: 10rem 2rem;
+            position: relative;
+            overflow: hidden;
+
+                @media only screen and (min-width: 600px){
+                    padding: 10rem 5rem;
+                }
+
+                & .circle {
+                    position: absolute;
+                    height: 25rem;
+                    opacity: 0.2;
+
+                        &:nth-child(1) {
+                            fill: $color-primary;
+                            top: -10rem;
+                            left: -10rem;
+
+                            @media only screen and (min-width: 770px){
+                                left: -5rem;
+                            }
+
+                            @media only screen and (min-width: 1200px){
+                                left: 5rem;
+                            }
+                        }
+
+                        &:nth-child(2) {
+                            fill: $color-secondary;
+                            height: 20rem;
+                            bottom: 5rem;
+                            right: -10rem;
+
+                            @media only screen and (min-width: 770px){
+                                right: -5rem;
+                            }
+
+                            @media only screen and (min-width: 1200px){
+                                right: 0;
+                            }
+                        }
+                }
+
+                & p {
+                    z-index: 2;
+                }
+        }
+
+}
+
+.parallax {
+	height: 95vh;
+}
+
+.composition { 
+    width: 100%;
+    height: 20rem;
+    position: relative;
+
+        @media only screen and (min-width: 770px){
+            width: 50%;
+        }
+
+        &__container {
+            @media only screen and (min-width: 770px){
+                display: flex !important;
+                align-items: center;
+            }
+        }
+
+        &__details {
+            display: grid;
+            gap: 5rem;
+            justify-items: center;
+
+            @media only screen and (min-width: 770px){
+                width: 50%;
+            }
+        }
+
+        &__animation {
+            position: absolute;
+
+                &--1 {
+                    top: 35%;
+                    left: 60%;
+                }
+
+                &--2 {
+                    top: 50%;
+                    left: 40%;
+                }
+        }
+
+        &__img {
+            height: 100%;
+            
+            &-box {
+                height: 15rem;
+                width: 20rem;
+                overflow: hidden;
+                position: absolute;
+                border: solid .5rem $white;
+                box-shadow: 0 0 1rem rgba($grey, 0.7);
+
+                    &--1 {
+                        transform: translate(-50%, -50%) rotate(10deg);
+                    }
+
+                    &--2 {
+                        transform: translate(-50%, -50%) rotate(-5deg);
+                    }
+
+
+                    @media only screen and (min-width: 600px){
+                        height: 18rem;
+                        width: 23rem;
+                    }
+
+                    @media only screen and (min-width: 1200px){
+                        height: 25rem;
+                        width: 30rem;
+                    }
+            }
+        }
+
+        &__text {
+            text-align: justify;
+        }
+}
+
+.timer {
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    justify-items: center;
+
+        &__component {
+            display: grid;
+            justify-items: center;
+            gap: 1rem;
+        }
+
+        &__value {
+            font-family: 'Marcellus', serif;
+            font-size: 5rem;
+            color: $color-primary;
+
+                @media only screen and (max-width: 340px) {
+                    font-size: 3rem;
+                }
+        }
+
+        &__name {
+            color: $grey;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+        }
+
+        &__heading {
+            text-align: center;
+            z-index: 5;
+        }
+
+        &__paragraph {
+            text-align: center;
+            z-index: 5;
+        }
+}
+
+.olary {
+
+        &__section {
+            background-image: url('../../img/WordArt.jpeg');
+            background-size: contain;
+            background-color: #f4f7fc;
+            height: 50rem;
+            background-position: center center;
+        }
+}

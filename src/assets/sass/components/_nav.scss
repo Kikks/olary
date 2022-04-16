@@ -1,0 +1,275 @@
+.nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2.5rem 5rem;
+    transition: all .5s;
+    z-index: 10;
+
+        @media only screen and (max-width: 770px){
+            padding: 2rem;
+        }
+
+        &__container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            align-content: center;
+        }
+
+        &__brand:link,
+        &__brand:visited {
+            letter-spacing: .6rem;
+            text-transform: uppercase;
+            color: $white;
+            text-decoration: none;
+            padding: .2rem;
+            opacity: 0;
+            animation: zoom-custom .5s 4s linear forwards;
+
+            &:focus {
+                outline: dashed .1rem $grey;
+            }
+
+            @media only screen and (max-width: 770px){
+                font-size: 1.3rem;
+            }
+        }
+
+        &__list {
+            list-style-type: none;
+
+                &-item {
+                    display: inline-block;
+                    margin-left: 3rem;
+                    opacity: 0;
+                    transition: all $transition;
+                    animation: fade-right-custom .5s linear forwards;
+
+                        &:nth-child(1) {
+                            animation-delay: 3.9s;
+                        }
+
+                        &:nth-child(2) {
+                            animation-delay: 3.8s;
+                        }
+                        &:nth-child(3) {
+                            animation-delay: 3.7s;
+                        }
+                        &:nth-child(4) {
+                            animation-delay: 3.6s;
+                        }
+                        &:nth-child(5) {
+                            animation-delay: 3.5s;
+                        }
+                }
+
+                @media only screen and (max-width: 872px){
+                    display: none;
+                }
+        }
+
+        &__link {
+            letter-spacing: .3rem;
+            font-size: 1.2rem;
+            padding: .2rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: $grey;
+            transition: all $transition;
+            
+
+                &--active {
+                    color: $color-primary !important;
+                }
+
+                &:hover {
+                    color: $color-primary;
+                }
+
+                &:visited {
+                    color: $grey;
+                }
+
+                &:focus {
+                    outline: dashed .1rem $grey;
+                }
+        }
+}
+
+.sticky {
+    position: fixed;
+    background-color: $white;
+    box-shadow: 0 .2rem .5rem rgba($grey, 0.5);
+
+        & .nav__brand {
+            color: $black !important;
+        }
+}
+
+.stickyToggle {
+    position: fixed !important;
+
+        & .drawertoggle__bar,
+        & .drawertoggle__bar::before,
+        & .drawertoggle__bar::after {
+            background-color: $grey;
+        }
+}
+
+.drawertoggle{
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    height: 3rem;
+    width: 3rem;
+    z-index: 30;
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    transition: all $transition;
+    opacity: 0;
+    animation: fade-left-custom .5s 3.5s linear forwards;
+
+        @media only screen and (min-width: 873px){
+            display: none;
+        }
+
+        &__bar{
+            background-color: $white;
+            height: .3rem;
+            width: 100%;
+            border-radius: 4rem;
+            position: relative;
+            transition: all $transition;
+
+                &::before,
+                &::after{
+                    content: "";
+                    position: absolute;
+                    height: 100%;
+                    left: 0;
+                    border-radius: 4rem;
+                    background-color: $white;
+                    transition: all $transition;
+                }
+
+                &::before{
+                    width: 85%;
+                    top: -.7rem;
+                }
+
+                &::after{
+                    width: 65%;
+                    top: .7rem;
+                }
+
+                &--x{
+                    width: 100%;
+                    background-color: transparent;
+
+                        &::before{
+                            width: 100%;
+                            top: 50%;
+                            transform: rotate(45deg);
+                        }
+
+                        &::after{
+                            width: 100%;
+                            top: 50%;
+                            transform: rotate(-45deg);
+                        }
+                }
+        }
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    background: linear-gradient(to top,  $color-primary 0%, $color-secondary 40%);
+    z-index: 20;
+    transition: all .5s;
+
+        & .nav__list-item {
+            margin: 0;
+        }
+
+        & .nav__link {
+            padding: 1.5rem 3rem;
+            color: $white;
+            font-size: 2rem;
+
+                &--active {
+                    background-color: $white;
+                }
+
+                &:hover {
+                    background-color: $white;
+                    color: $color-primary;
+                }
+        }
+
+        &__container{
+            width: 100%;
+            display: grid;
+            gap: 7rem;
+            justify-items: center;
+            align-content: center;
+            z-index: 2;
+        }
+
+        &--closed{
+            transform: translateX(100vw);
+        }
+
+        &--opened{
+            transform: translateX(0);
+
+                & ~ .drawertoggle .drawertoggle__bar {
+                    background-color: transparent !important;
+                }
+
+                & ~ .drawertoggle .drawertoggle__bar::before,
+                & ~ .drawertoggle .drawertoggle__bar::after {
+                    background-color: $white !important;
+                }
+        }
+}
+
+#tsparticles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    
+}
+
+.backdrop {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba($black, 1);
+    z-index: 30;
+    transition: all .5s;
+
+        &--opened {
+            opacity: 1;
+
+            & ~ main {
+                overflow: hidden;
+            }
+        }
+
+        &--closed {
+            opacity: 0;
+            display: none;
+        }
+}

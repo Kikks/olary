@@ -1,0 +1,81 @@
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    width: 100%;
+    background-color: $black;
+}
+
+#root {
+    width: 100%;
+    position: relative;
+}
+
+main {
+    min-height: 100vh;
+    width: 100%;
+    transition: all .5s;
+    display: grid;
+    justify-items: center;
+}
+
+.section {
+    background-color: $white;
+    width: 100%;
+    padding: 10rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+        @media only screen and (min-width: 600px){
+            padding: 10rem 5rem;
+        }
+
+        &__container {
+            width: 100%;
+            max-width: $max-width;
+            display: grid;
+            justify-items: center;
+            gap: 5rem;
+
+                &--story {
+                    justify-items: start;
+                    gap: 3rem !important;
+                }
+        }
+
+        &--overlap {
+            overflow: visible;
+        }
+}
+
+.react-parallax {
+    width: 100%;
+    background-color: $black;
+}
+
+.pictureSection {
+    height: 100vh;
+    width: 100%;
+    background-position: center top;
+    background-attachment: fixed;
+    background-size: cover;
+}

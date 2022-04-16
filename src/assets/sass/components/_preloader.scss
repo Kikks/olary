@@ -1,0 +1,18 @@
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    animation: slide-up-custom 1s 2s ease-in-out forwards;
+    background-color: $white;
+    z-index: 30;
+
+        &__img {
+            width: 25rem;
+            animation: fade-up-custom 1s 1.75s ease-in-out forwards;
+        }
+}

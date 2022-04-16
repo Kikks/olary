@@ -1,0 +1,168 @@
+@keyframes slide-up-custom {
+    0% {
+        height: 100vh;
+    }
+
+    100% {
+        height: 0;
+    }
+}
+
+@keyframes fade-up-custom {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    90% {
+        opacity: 0;
+        transform: translateY(-2rem);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-100vh);
+    }
+}
+
+@keyframes fade-out-custom {
+    from {
+        opacity: 1
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes zoom-custom {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fade-in-custom {
+    from { 
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-left-custom {
+    from {
+        opacity: 0;
+        transform: translateX(5rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fade-right-custom {
+    from {
+        opacity: 0;
+        transform: translateX(-5rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translate(-50%, 0);
+    }
+
+    25% {
+        transform:  translate(-50%, -0.5rem);
+    }
+
+    50% {
+        transform:  translate(-50%, 0);
+    }
+
+    75% {
+        transform:  translate(-50%, 0.5rem);
+    }
+
+    100% {
+        transform:  translate(-50%, 0.1rem);
+    }
+}
+
+@keyframes fill-up {
+    0% {
+        opacity: 0;
+        fill: none;
+        stroke-dashoffset: 500;
+    }
+
+    40% {
+        opacity: 1;
+        fill: none;
+    }
+
+    90% {
+        fill: rgba($white,0);
+    }
+
+    100% {
+        opacity: 1;
+        fill: rgba($white,1);
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fill-up-2 {
+    0% {
+        opacity: 0;
+    }
+    
+    20% {
+        opacity: 0;
+        stroke-dashoffset: 800;
+    }
+
+    60% {
+        opacity: 1;
+        stroke-dashoffset: 0;
+
+    }
+
+    100% {
+        opacity: 0;
+        stroke-dashoffset: -800;
+    }
+}
+
+@keyframes blur-out {
+    from {
+        filter: brightness(0%);
+    }
+
+    to {
+        filter: brightness(60%);
+    }
+}
+
+@keyframes image-slider-scale-up {
+    0%{
+        transform: translate(-50%, -50%) scale(0);
+    }
+    100%{
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
